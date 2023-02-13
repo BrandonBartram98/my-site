@@ -3,8 +3,21 @@ import GameStack from '@/components/GameStack'
 import WebStack from '@/components/WebStack'
 import Image from 'next/image'
 import Link from 'next/link'
+import { GetFollowerCount, GetRepoCount, GetStarCount } from 'pages/api/github'
 
-export default function Home() {
+export default async function Home() {
+	let followerCount, repoCount, starredCount
+
+	try {
+		;[followerCount, repoCount, starredCount] = await Promise.all([
+			GetFollowerCount(),
+			GetRepoCount(),
+			GetStarCount(),
+		])
+	} catch (error) {
+		console.error(error)
+	}
+
 	return (
 		<main className="mx-auto grid max-w-3xl grid-cols-8 gap-4 pt-8 md:pt-12 pb-16 md:pb-24 px-6 text-black">
 			<div className="flex justify-center md:h-52 overflow-hidden items-center p-6 col-span-5 md:col-span-6 text-white border-2 border-mustard rounded-xl">
@@ -13,7 +26,7 @@ export default function Home() {
 						src={'/Avatar.jpeg'}
 						width={92}
 						height={92}
-						className="rounded-xl md:h-24 w-24 border-2 hover:scale-125 border-black/20 object-cover transition-all duration-200"
+						className="rounded-xl md:h-24 w-24 object-cover transition-all duration-200"
 						alt="Avatar"
 					/>
 
@@ -98,19 +111,66 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className="flex justify-center col-span-4 md:col-span-3 items-center rounded-xl">
-				<div className="flex flex-col gap-4 w-full h-full">
-					<div className="flex flex-auto rounded-xl bg-slate-50 fill-black">
-						<div className="flex w-full py-3 justify-evenly items-center">
-							<WebStack />
+			<div className="flex flex-col justify-center col-span-4 md:col-span-3 gap-4 items-center rounded-xl">
+				<div className="flex flex-row w-full h-full gap-4">
+					<div className="flex flex-col bg-slate-50 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
+						<svg
+							viewBox="0 0 15 15"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							width="15"
+							height="15"
+						>
+							<path
+								d="M7.5 0a3.499 3.499 0 100 6.996A3.499 3.499 0 107.5 0zm-2 8.994a3.5 3.5 0 00-3.5 3.5v2.497h11v-2.497a3.5 3.5 0 00-3.5-3.5h-4z"
+								fill="currentColor"
+							></path>
+						</svg>
+						<div className="flex flex-col items-center text-xs">
+							<p className="text-xs">Follows</p>
+							<p className="font-bold text-xs">{followerCount}</p>
 						</div>
 					</div>
-					<div className="flex flex-auto bg-slate-50 rounded-xl">
-						<div className="flex w-full py-3 justify-evenly items-center">
-							<GameStack />
+					<div className="flex flex-col bg-slate-50 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
+						<svg
+							viewBox="0 0 15 15"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							width="15"
+							height="15"
+						>
+							<path
+								fillRule="evenodd"
+								clipRule="evenodd"
+								d="M6.007 13.418l2-12 .986.164-2 12-.986-.164zm-.8-8.918l-3 3 3 3-.707.707L.793 7.5 4.5 3.793l.707.707zm5.293-.707L14.207 7.5 10.5 11.207l-.707-.707 3-3-3-3 .707-.707z"
+								fill="currentColor"
+							></path>
+						</svg>
+						<div className="flex flex-col items-center text-xs">
+							<p className="text-xs">Repos</p>
+							<p className="font-bold text-xs">{repoCount}</p>
+						</div>
+					</div>
+					<div className="flex flex-col bg-slate-50 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
+						<svg
+							viewBox="0 0 15 15"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							width="15"
+							height="15"
+						>
+							<path
+								d="M7.948.779a.5.5 0 00-.896 0L5.005 4.926l-4.577.665a.5.5 0 00-.277.853l3.312 3.228-.782 4.559a.5.5 0 00.725.527L7.5 12.605l4.094 2.153a.5.5 0 00.725-.527l-.782-4.56 3.312-3.227a.5.5 0 00-.277-.853l-4.577-.665L7.948.78z"
+								fill="currentColor"
+							></path>
+						</svg>
+						<div className="flex flex-col items-center text-xs">
+							<p className="text-xs">Starred</p>
+							<p className="font-bold text-xs">{starredCount}</p>
 						</div>
 					</div>
 				</div>
+				<div className="w-full h-full bg-slate-50 rounded-xl"></div>
 			</div>
 
 			<Link
