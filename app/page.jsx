@@ -1,26 +1,12 @@
 import ContactForm from '@/components/ContactForm'
-import GameStack from '@/components/GameStack'
-import WebStack from '@/components/WebStack'
+import SpotifyBlock from '@/components/SpotifyBlock'
 import Image from 'next/image'
 import Link from 'next/link'
-import { GetFollowerCount, GetRepoCount, GetStarCount } from 'pages/api/github'
 
 export default async function Home() {
-	let followerCount, repoCount, starredCount
-
-	try {
-		;[followerCount, repoCount, starredCount] = await Promise.all([
-			GetFollowerCount(),
-			GetRepoCount(),
-			GetStarCount(),
-		])
-	} catch (error) {
-		console.error(error)
-	}
-
 	return (
-		<main className="mx-auto grid max-w-3xl grid-cols-8 gap-4 pt-8 md:pt-12 pb-16 md:pb-24 px-6 text-black">
-			<div className="flex justify-center md:h-52 overflow-hidden items-center p-6 col-span-5 md:col-span-6 text-white border-2 border-mustard rounded-xl">
+		<main className="mx-auto grid max-w-3xl grid-cols-8 gap-4 pt-8 md:pt-12 px-6 text-black">
+			<div className="flex justify-center md:h-52 overflow-hidden items-center p-6 col-span-5 md:col-span-6 text-white border-2 border-pink rounded-xl">
 				<div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
 					<Image
 						src={'/Avatar.jpeg'}
@@ -32,34 +18,25 @@ export default async function Home() {
 
 					<div className="text-center md:text-left">
 						<h1 className="text-md md:text-2xl">brandon bartram</h1>
-						<p className="text-mustard">web & game developer 🐱</p>
+						<p className="text-pink">web & game developer 🐱</p>
 					</div>
 				</div>
 			</div>
 			<div className="flex h-full justify-center col-span-3 md:col-span-2 items-center rounded-xl">
 				<div className="grid grid-cols-2 grid-rows-2 h-full w-full gap-4">
-					<div className="flex rounded-xl items-center justify-center transition-all duration-200">
-						<svg
-							viewBox="0 0 15 15"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							width="30"
-							height="30"
-						>
-							<path
-								fillRule="evenodd"
-								clipRule="evenodd"
-								d="M0 7.5a7.5 7.5 0 1115 0 7.5 7.5 0 01-15 0zm4.146-2.354a1.914 1.914 0 012.707 0l.647.647.646-.647a1.914 1.914 0 012.707 2.708L7.5 11.207 4.146 7.854a1.914 1.914 0 010-2.708z"
-								fill="white"
-							></path>
-						</svg>
-					</div>
+					<Link
+						href={'/blog'}
+						className="flex font-bold rounded-xl col-span-full items-center justify-center text-white bg-pink font-fira text-xs hover:scale-95 transition-all duration-200"
+					>
+						<p>my blog</p>
+					</Link>
 					<Link
 						href={'https://twitter.com/brandon_bartram'}
 						target="_blank"
-						className="flex bg-twitter rounded-xl items-center justify-center hover:scale-110 transition-all duration-200"
+						className="flex group bg-twitter rounded-xl items-center justify-center hover:scale-95 transition-all duration-200"
 					>
 						<svg
+							className="group-hover:rotate-12 transition-all duration-300"
 							viewBox="0 0 15 15"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
@@ -75,9 +52,10 @@ export default async function Home() {
 					<Link
 						href={'https://www.linkedin.com/in/brandonbartram/'}
 						target="_blank"
-						className="flex bg-linkedin rounded-xl items-center justify-center hover:scale-110 transition-all duration-200"
+						className="flex group bg-blue-600 rounded-xl items-center justify-center hover:scale-95 transition-all duration-200"
 					>
 						<svg
+							className="group-hover:-rotate-12 transition-all duration-300"
 							viewBox="0 0 15 15"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
@@ -92,28 +70,12 @@ export default async function Home() {
 							></path>
 						</svg>
 					</Link>
-					<div className="flex rounded-xl items-center justify-center transition-all duration-200">
-						<svg
-							viewBox="0 0 15 15"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							width="30"
-							height="30"
-						>
-							<path
-								fillRule="evenodd"
-								clipRule="evenodd"
-								d="M0 5.5A3.5 3.5 0 013.5 2h8A3.5 3.5 0 0115 5.5v4.528a2.972 2.972 0 01-5.63 1.329L9.19 11H5.809l-.179.357A2.972 2.972 0 010 10.027V5.5zM4 8V7H3V6h1V5h1v1h1v1H5v1H4zm6 0H9V7h1v1zm1-2h1V5h-1v1z"
-								fill="white"
-							></path>
-						</svg>
-					</div>
 				</div>
 			</div>
 
 			<div className="flex flex-col justify-center col-span-4 md:col-span-3 gap-4 items-center rounded-xl">
 				<div className="flex flex-row w-full h-full gap-4">
-					<div className="flex flex-col bg-slate-50 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
+					<div className="flex flex-col bg-slate-200 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
 						<svg
 							viewBox="0 0 15 15"
 							fill="none"
@@ -128,10 +90,10 @@ export default async function Home() {
 						</svg>
 						<div className="flex flex-col items-center text-xs">
 							<p className="text-xs">Follows</p>
-							<p className="font-bold text-xs">{followerCount}</p>
+							<p className="font-bold text-xs">1</p>
 						</div>
 					</div>
-					<div className="flex flex-col bg-slate-50 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
+					<div className="flex flex-col bg-slate-200 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
 						<svg
 							viewBox="0 0 15 15"
 							fill="none"
@@ -148,10 +110,10 @@ export default async function Home() {
 						</svg>
 						<div className="flex flex-col items-center text-xs">
 							<p className="text-xs">Repos</p>
-							<p className="font-bold text-xs">{repoCount}</p>
+							<p className="font-bold text-xs">2</p>
 						</div>
 					</div>
-					<div className="flex flex-col bg-slate-50 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
+					<div className="flex flex-col bg-slate-200 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
 						<svg
 							viewBox="0 0 15 15"
 							fill="none"
@@ -166,7 +128,7 @@ export default async function Home() {
 						</svg>
 						<div className="flex flex-col items-center text-xs">
 							<p className="text-xs">Starred</p>
-							<p className="font-bold text-xs">{starredCount}</p>
+							<p className="font-bold text-xs">3</p>
 						</div>
 					</div>
 				</div>
@@ -176,7 +138,7 @@ export default async function Home() {
 			<Link
 				href={'https://github.com/brandonbartram98'}
 				target="_blank"
-				className="relative flex h-38 md:h-52 col-span-4 md:col-span-5 p-3 md:p-6 bg-code text-white rounded-xl group hover:scale-105 transition-all duration-200"
+				className="relative flex h-38 md:h-52 col-span-4 md:col-span-5 p-3 md:p-6 bg-code text-white rounded-2xl group hover:scale-95 transition-all duration-300"
 			>
 				<div className="absolute rounded-xl inset-0 bg-black bg-opacity-80 z-0"></div>
 				<div className="flex flex-col justify-between z-10 w-full">
@@ -216,61 +178,35 @@ export default async function Home() {
 				</div>
 			</Link>
 
-			<div className="flex h-38 md:h-52 justify-center col-span-4 items-center p-6 bg-orange-400 rounded-xl">
+			<div className="flex h-38 md:h-52 justify-center col-span-4 items-center p-6 bg-slate-300 rounded-xl">
+				<div className="flex">
+					<SpotifyBlock />
+				</div>
+			</div>
+
+			<div className="flex h-38 md:h-52 justify-center col-span-4 items-center p-6 bg-slate-400 rounded-xl">
 				<div className="flex">
 					<h2></h2>
 				</div>
 			</div>
 
-			<div className="flex h-38 md:h-52 justify-center col-span-4 items-center p-6 bg-red-400 rounded-xl">
+			<div className="flex h-38 md:h-52 justify-center col-span-5 items-center p-6 bg-slate-600 rounded-xl">
 				<div className="flex">
 					<h2></h2>
 				</div>
 			</div>
 
-			<div className="flex h-38 md:h-52 justify-center col-span-5 items-center p-6 bg-green-400 rounded-xl">
+			<div className="flex h-38 md:h-52 justify-center col-span-3 items-center p-6 bg-slate-500 rounded-xl">
 				<div className="flex">
 					<h2></h2>
 				</div>
 			</div>
 
-			<div className="flex h-38 md:h-52 justify-center col-span-3 items-center p-6 bg-blue-400 rounded-xl">
-				<div className="flex">
-					<h2></h2>
-				</div>
-			</div>
-
-			<div className="flex justify-center col-span-8 items-center p-6 px-6 md:px-12 bg-mustard rounded-xl">
+			<div className="flex justify-center col-span-8 items-center p-6 px-6 md:px-12 bg-pink rounded-xl">
 				<div className="flex flex-col w-full">
 					<ContactForm />
 				</div>
 			</div>
-
-			<footer className="flex flex-col justify-center col-span-8 items-center text-white mt-2 gap-4">
-				<p className="text-xs">
-					Powered By{' '}
-					<a href="https://vercel.com" className="underline">
-						Vercel
-					</a>
-					.&nbsp;Built By{' '}
-					<a href="https://twitter.com/brandon_bartram" className="underline">
-						Me
-					</a>
-					.
-				</p>
-				<svg
-					viewBox="0 0 15 15"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-					width="18"
-					height="18"
-				>
-					<path
-						d="M6.765 5.235a1.79 1.79 0 10-2.53 2.53L7.5 11.03l3.265-3.265a1.79 1.79 0 00-2.53-2.53L7.5 5.97l-.735-.735z"
-						fill="currentColor"
-					></path>
-				</svg>
-			</footer>
 		</main>
 	)
 }

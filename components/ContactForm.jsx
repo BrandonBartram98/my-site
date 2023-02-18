@@ -10,7 +10,7 @@ export default function ContactForm() {
 			<div className="text-center">
 				<h2 className="text-2xl font-bold">Thanks!</h2>
 				<p className="text-black/80">
-					I'll get back to you as soon as possible.
+					I&apos;ll get back to you as soon as possible.
 				</p>
 			</div>
 		)
@@ -20,7 +20,7 @@ export default function ContactForm() {
 		<>
 			<div className="text-left pb-4">
 				<h2 className="font-bold pb-1 text-lg">contact me</h2>
-				<p>fill in the form below, I'll get back to you asap</p>
+				<p>fill in the form below, I&apos;ll get back to you asap</p>
 			</div>
 			<form className="flex flex-col gap-4 w-full">
 				<label htmlFor="email">

@@ -9,10 +9,9 @@ module.exports = {
 		extend: {
 			colors: {
 				darkbg: '#171717',
-				mustard: '#FFDD4A',
 				twitter: '#1DA1F2',
 				github: '#161b22',
-				linkedin: '#7fc05e',
+				pink: '#e94299',
 			},
 			backgroundImage: {
 				code: "url('https://media3.giphy.com/media/1lvotGQwhzi6O0gQtV/giphy.gif?cid=ecf05e47po1y2ahk8xg138gxwnxuhs7rlyevajj91lp86ahk&rid=giphy.gif&ct=g')",
@@ -24,5 +23,5 @@ module.exports = {
 			fira: ['Fira Code', 'monospace'],
 		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')],
 }
