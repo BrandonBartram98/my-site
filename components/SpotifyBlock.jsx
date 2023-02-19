@@ -1,9 +1,14 @@
 'use client'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function SpotifyBlock() {
+	const [loadingData, setLoadingData] = useState(false)
 	const [isListening, setIsListening] = useState(false)
 	const [nowPlaying, setNowPlaying] = useState({})
+
+	const [songUrl, setSongUrl] = useState('')
 
 	const GetSpotifyData = async () => {
 		const response = await fetch('/api/spotify', {
@@ -15,16 +20,28 @@ export default function SpotifyBlock() {
 
 		const playing = await response.json()
 		setNowPlaying(playing)
+		if (!playing.isPlaying) {
+			setSongUrl(
+				'https://open.spotify.com/playlist/4FKL1mD79QAm4h3GWktFcy?si=5d48ab58bb554ecb'
+			)
+		} else {
+			setSongUrl(playing.songUrl)
+		}
 		setIsListening(playing.isPlaying)
+		setLoadingData(true)
 	}
 
 	useEffect(() => {
 		GetSpotifyData()
 	}, [])
 	return (
-		<div className="flex flex-col justify-between text-spotify">
+		<Link
+			target={'_blank'}
+			href={songUrl}
+			className="flex flex-col w-full h-full justify-between text-spotify"
+		>
 			<svg
-				className="group-hover:rotate-12 transition-all duration-300"
+				className="md:group-hover:rotate-[25deg] transition-all z-20 duration-300"
 				viewBox="0 0 15 15"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -38,26 +55,57 @@ export default function SpotifyBlock() {
 					fill="currentColor"
 				></path>
 			</svg>
-
-			{!isListening ? (
-				<div className="flex items-center">
-					<p>not listening</p>
-				</div>
+			{!loadingData ? (
+				<p>loading..</p>
 			) : (
-				<div className="flex flex-col gap-2 text-white">
-					<img
-						className="rounded-l-lg w-40 hidden md:block absolute -right-16 top-1/2 transform -translate-y-1/2 group-hover:right-0 transition-all duration-300"
-						src={nowPlaying.albumImageUrl}
-					/>
-					<div className="flex flex-col gap-2">
-						<p className="text-spotify font-bold">currently listening</p>
-						<div className="w-10/12">
-							<p className="font-bold lowercase">{nowPlaying.title}</p>
-							<p className="lowercase">{nowPlaying.artist}</p>
+				<>
+					{!isListening ? (
+						<div className="flex flex-col gap-2 text-white transition-all duration-300">
+							<Image
+								className="rounded-l-lg hidden h-40 w-40 object-none md:block absolute -right-16 top-1/2 transform -translate-y-1/2 group-hover:right-0 transition-all duration-300"
+								src={'/images/evangelion.jpg'}
+								width={160}
+								height={160}
+								alt={''}
+							/>
+							<div className="flex flex-col gap-2 md:group-hover:opacity-60">
+								<div className="text-red-400 font-bold flex gap-2 items-center">
+									<p className="flex">not listening</p>
+									<div className="flex w-2 h-2">
+										<span className="relative inline-flex rounded-full h-2 w-2 bg-red-400"></span>
+									</div>
+								</div>
+								<div className="w-10/12">
+									<p className="font-bold lowercase">featured playlist</p>
+									<p className="lowercase">chi</p>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
+					) : (
+						<div className="flex flex-col gap-2 text-white">
+							<img
+								className="rounded-l-lg z-0 md:z-20 w-full h-full md:w-40 md:h-40 object-cover md:object-contain opacity-20 md:opacity-100 absolute -right-0 md:-right-16 top-1/2 transform -translate-y-1/2 md:group-hover:right-0 transition-all duration-300"
+								src={nowPlaying.albumImageUrl}
+							/>
+							<div className="flex flex-col gap-2 md:group-hover:opacity-60 z-10">
+								<div className="text-spotify font-bold flex gap-2 items-center">
+									<p className="flex">currently listening</p>
+									<div className="flex w-2 h-2">
+										<span className="animate-ping hidden md:inline-flex absolute h-2 w-2 rounded-full bg-spotify"></span>
+										<span className="relative hidden md:inline-flex rounded-full h-2 w-2 bg-spotify"></span>
+									</div>
+								</div>
+								<div className="md:w-9/12">
+									<p className="font-bold lowercase truncate ">
+										{nowPlaying.title}
+									</p>
+									<p className="lowercase">{nowPlaying.artist}</p>
+								</div>
+							</div>
+						</div>
+					)}
+				</>
 			)}
-		</div>
+		</Link>
 	)
 }

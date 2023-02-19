@@ -22,7 +22,16 @@ export default function ContactForm() {
 				<h2 className="font-bold pb-1 text-lg">contact me</h2>
 				<p>fill in the form below, I&apos;ll get back to you asap</p>
 			</div>
-			<form className="flex flex-col gap-4 w-full">
+			<form
+				onSubmit={async (event) => {
+					event.preventDefault()
+
+					setLoading(true)
+				}}
+				method="POST"
+				action="/api/contact"
+				className="flex flex-col gap-4 w-full"
+			>
 				<label htmlFor="email">
 					<input
 						className="w-full rounded-md p-2 font-fira"
@@ -45,7 +54,7 @@ export default function ContactForm() {
 					{loading ? (
 						<span className="loader">
 							<svg
-								className="h-6 w-6 animate-spin stroke-black"
+								className="h-6 w-6 animate-spin stroke-white"
 								viewBox="0 0 256 256"
 							>
 								<line

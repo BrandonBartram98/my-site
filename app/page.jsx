@@ -10,9 +10,9 @@ export default async function Home() {
 				<div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
 					<Image
 						src={'/Avatar.jpeg'}
-						width={92}
-						height={92}
-						className="rounded-xl md:h-24 w-24 object-cover transition-all duration-200"
+						width={120}
+						height={120}
+						className="rounded-xl w-30 object-cover transition-all duration-200"
 						alt="Avatar"
 					/>
 
@@ -25,12 +25,14 @@ export default async function Home() {
 			<div className="flex h-full justify-center col-span-3 md:col-span-2 items-center rounded-xl">
 				<div className="grid grid-cols-2 grid-rows-2 h-full w-full gap-4">
 					<Link
+						title="blog"
 						href={'/blog'}
-						className="flex font-bold rounded-xl col-span-full items-center justify-center text-white bg-pink font-fira text-xs hover:scale-95 hover:bg-slate-200 hover:text-black transition-all duration-300"
+						className="flex rounded-xl col-span-full items-center justify-center text-white bg-pink font-fira text-xs hover:scale-95 hover:bg-slate-200 hover:text-black transition-all duration-300"
 					>
-						<p>my blog</p>
+						<p className="">my blog</p>
 					</Link>
 					<Link
+						title="twitter"
 						href={'https://twitter.com/brandon_bartram'}
 						target="_blank"
 						className="flex group bg-twitter rounded-xl items-center justify-center hover:scale-95 transition-all duration-200"
@@ -42,6 +44,7 @@ export default async function Home() {
 							xmlns="http://www.w3.org/2000/svg"
 							width="30"
 							height="30"
+							alt="twitter"
 						>
 							<path
 								d="M14.977 1.467a.5.5 0 00-.87-.301 2.559 2.559 0 01-1.226.763A3.441 3.441 0 0010.526 1a3.539 3.539 0 00-3.537 3.541v.44C3.998 4.75 2.4 2.477 1.967 1.325a.5.5 0 00-.916-.048C.004 3.373-.157 5.407.604 7.139 1.27 8.656 2.61 9.864 4.51 10.665 3.647 11.276 2.194 12 .5 12a.5.5 0 00-.278.916C1.847 14 3.55 14 5.132 14h.048c4.861 0 8.8-3.946 8.8-8.812v-.479c.363-.37.646-.747.82-1.236.193-.546.232-1.178.177-2.006z"
@@ -50,6 +53,7 @@ export default async function Home() {
 						</svg>
 					</Link>
 					<Link
+						title="linkedin"
 						href={'https://www.linkedin.com/in/brandonbartram/'}
 						target="_blank"
 						className="flex group bg-blue-600 rounded-xl items-center justify-center hover:scale-95 transition-all duration-200"
@@ -61,6 +65,7 @@ export default async function Home() {
 							xmlns="http://www.w3.org/2000/svg"
 							width="30"
 							height="30"
+							alt="linkedin"
 						>
 							<path
 								fillRule="evenodd"
@@ -113,24 +118,6 @@ export default async function Home() {
 							<p className="font-bold text-xs">2</p>
 						</div>
 					</div>
-					<div className="flex flex-col bg-slate-200 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
-						<svg
-							viewBox="0 0 15 15"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							width="15"
-							height="15"
-						>
-							<path
-								d="M7.948.779a.5.5 0 00-.896 0L5.005 4.926l-4.577.665a.5.5 0 00-.277.853l3.312 3.228-.782 4.559a.5.5 0 00.725.527L7.5 12.605l4.094 2.153a.5.5 0 00.725-.527l-.782-4.56 3.312-3.227a.5.5 0 00-.277-.853l-4.577-.665L7.948.78z"
-								fill="currentColor"
-							></path>
-						</svg>
-						<div className="flex flex-col items-center text-xs">
-							<p className="text-xs">starred</p>
-							<p className="font-bold text-xs">3</p>
-						</div>
-					</div>
 				</div>
 			</div>
 
@@ -177,15 +164,11 @@ export default async function Home() {
 				</div>
 			</Link>
 
-			<Link
-				target={'_blank'}
-				href={'https://open.spotify.com/user/1124801826?si=17f146d6fc054e46'}
-				className="flex h-48 md:h-52 col-span-4 p-6 bg-slate-800 rounded-xl relative overflow-hidden text-white group transition-all duration-300"
-			>
+			<div className="flex h-48 md:h-52 col-span-4 p-3 md:p-6 bg-slate-800 md:hover:bg-slate-900 rounded-xl relative transition-all duration-300 overflow-hidden text-white group">
 				<SpotifyBlock />
-			</Link>
+			</div>
 
-			<div className="flex h-38 md:h-52 justify-center col-span-4 items-center p-6 bg-slate-400 rounded-xl">
+			<div className="flex h-38 md:h-52 justify-center col-span-8 md:col-span-4 items-center p-6 bg-slate-400 rounded-xl">
 				<div className="flex">
 					<h2></h2>
 				</div>
@@ -198,11 +181,18 @@ export default async function Home() {
 			</div>
 
 			<Link
+				title="xist"
 				target={'_blank'}
 				href={'https://xistvr.com/'}
-				className="flex h-38 md:h-52 justify-center col-span-3 items-center p-6 bg-black rounded-xl"
+				className="flex h-38 md:h-52 justify-center col-span-3 items-center hover:scale-95 transition-all duration-300 p-6 bg-black rounded-xl"
 			>
-				<Image src={'/xist.svg'} width={90} height={90} alt={''} />
+				<Image
+					className="h-32 w-32 transition-all duration-300"
+					src={'/xist.svg'}
+					width={50}
+					height={50}
+					alt={''}
+				/>
 			</Link>
 
 			<div className="flex justify-center col-span-8 items-center p-6 px-6 md:px-12 bg-pink rounded-xl">
