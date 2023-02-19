@@ -8,7 +8,7 @@ export default function Blog() {
 		<PostBlock key={post.slug} {...post} />
 	))
 	return (
-		<main className="max-w-3xl mx-auto pt-8 text-white">
+		<main className="max-w-3xl mx-auto pt-8 md:pt-12 px-6 text-white">
 			<Link href="/" className="text-xs">
 				<div className="flex items-center gap-2 pb-4">
 					<svg

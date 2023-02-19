@@ -26,7 +26,7 @@ export default async function Home() {
 				<div className="grid grid-cols-2 grid-rows-2 h-full w-full gap-4">
 					<Link
 						href={'/blog'}
-						className="flex font-bold rounded-xl col-span-full items-center justify-center text-white bg-pink font-fira text-xs hover:scale-95 transition-all duration-200"
+						className="flex font-bold rounded-xl col-span-full items-center justify-center text-white bg-pink font-fira text-xs hover:scale-95 hover:bg-slate-200 hover:text-black transition-all duration-300"
 					>
 						<p>my blog</p>
 					</Link>
@@ -73,7 +73,7 @@ export default async function Home() {
 				</div>
 			</div>
 
-			<div className="flex flex-col justify-center col-span-4 md:col-span-3 gap-4 items-center rounded-xl">
+			<div className="flex flex-col justify-center col-span-8 md:col-span-3 gap-4 items-center rounded-xl">
 				<div className="flex flex-row w-full h-full gap-4">
 					<div className="flex flex-col bg-slate-200 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
 						<svg
@@ -89,7 +89,7 @@ export default async function Home() {
 							></path>
 						</svg>
 						<div className="flex flex-col items-center text-xs">
-							<p className="text-xs">Follows</p>
+							<p className="text-xs">follows</p>
 							<p className="font-bold text-xs">1</p>
 						</div>
 					</div>
@@ -109,7 +109,7 @@ export default async function Home() {
 							></path>
 						</svg>
 						<div className="flex flex-col items-center text-xs">
-							<p className="text-xs">Repos</p>
+							<p className="text-xs">repos</p>
 							<p className="font-bold text-xs">2</p>
 						</div>
 					</div>
@@ -127,12 +127,11 @@ export default async function Home() {
 							></path>
 						</svg>
 						<div className="flex flex-col items-center text-xs">
-							<p className="text-xs">Starred</p>
+							<p className="text-xs">starred</p>
 							<p className="font-bold text-xs">3</p>
 						</div>
 					</div>
 				</div>
-				<div className="w-full h-full bg-slate-50 rounded-xl"></div>
 			</div>
 
 			<Link
@@ -178,11 +177,13 @@ export default async function Home() {
 				</div>
 			</Link>
 
-			<div className="flex h-38 md:h-52 justify-center col-span-4 items-center p-6 bg-slate-300 rounded-xl">
-				<div className="flex">
-					<SpotifyBlock />
-				</div>
-			</div>
+			<Link
+				target={'_blank'}
+				href={'https://open.spotify.com/user/1124801826?si=17f146d6fc054e46'}
+				className="flex h-48 md:h-52 col-span-4 p-6 bg-slate-800 rounded-xl relative overflow-hidden text-white group transition-all duration-300"
+			>
+				<SpotifyBlock />
+			</Link>
 
 			<div className="flex h-38 md:h-52 justify-center col-span-4 items-center p-6 bg-slate-400 rounded-xl">
 				<div className="flex">
@@ -196,11 +197,13 @@ export default async function Home() {
 				</div>
 			</div>
 
-			<div className="flex h-38 md:h-52 justify-center col-span-3 items-center p-6 bg-slate-500 rounded-xl">
-				<div className="flex">
-					<h2></h2>
-				</div>
-			</div>
+			<Link
+				target={'_blank'}
+				href={'https://xistvr.com/'}
+				className="flex h-38 md:h-52 justify-center col-span-3 items-center p-6 bg-black rounded-xl"
+			>
+				<Image src={'/xist.svg'} width={90} height={90} alt={''} />
+			</Link>
 
 			<div className="flex justify-center col-span-8 items-center p-6 px-6 md:px-12 bg-pink rounded-xl">
 				<div className="flex flex-col w-full">

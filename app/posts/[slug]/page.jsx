@@ -24,7 +24,7 @@ export default function Post(props) {
 	const slug = props.params.slug
 	const post = getPostContent(slug)
 	return (
-		<div className="max-w-3xl mx-auto pt-8 text-white">
+		<div className="max-w-3xl mx-auto pt-8 md:pt-12 px-6 text-white">
 			<Link href="/blog" className="text-xs">
 				<div className="flex items-center gap-2 pb-4">
 					<svg
