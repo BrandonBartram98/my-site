@@ -6,8 +6,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    * {
+      box-sizing: border-box;
+    }
+    
+    html,
+    body,
+    #__next {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
 body {
-    @apply bg-darkbg;
+    @apply bg-darkbg
 }
 
 h1 {
@@ -16,4 +31,8 @@ h1 {
 
 p, h2, h3 {
     @apply font-fira text-sm
+}
+
+canvas {
+    @apply fixed w-full h-full m-0 p-0
 }

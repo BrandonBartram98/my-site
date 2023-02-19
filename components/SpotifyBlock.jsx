@@ -38,7 +38,7 @@ export default function SpotifyBlock() {
 		<Link
 			target={'_blank'}
 			href={songUrl}
-			className="flex flex-col w-full h-full justify-between text-spotify"
+			className="flex flex-col w-full h-full p-3 md:p-6 justify-between text-spotify"
 		>
 			<svg
 				className="md:group-hover:rotate-[25deg] transition-all z-20 duration-300"
@@ -62,13 +62,13 @@ export default function SpotifyBlock() {
 					{!isListening ? (
 						<div className="flex flex-col gap-2 text-white transition-all duration-300">
 							<Image
-								className="rounded-l-lg hidden h-40 w-40 object-none md:block absolute -right-16 top-1/2 transform -translate-y-1/2 group-hover:right-0 transition-all duration-300"
+								className="z-0 md:z-20 w-full h-full md:w-40 md:h-40 object-cover opacity-20 md:opacity-100 absolute -right-0 md:-right-16 top-1/2 transform -translate-y-1/2 md:group-hover:right-0 transition-all duration-300"
 								src={'/images/evangelion.jpg'}
 								width={160}
 								height={160}
 								alt={''}
 							/>
-							<div className="flex flex-col gap-2 md:group-hover:opacity-60">
+							<div className="flex flex-col z-20 gap-2 md:group-hover:opacity-60">
 								<div className="text-red-400 font-bold flex gap-2 items-center">
 									<p className="flex">not listening</p>
 									<div className="flex w-2 h-2">
@@ -84,7 +84,7 @@ export default function SpotifyBlock() {
 					) : (
 						<div className="flex flex-col gap-2 text-white">
 							<img
-								className="rounded-l-lg z-0 md:z-20 w-full h-full md:w-40 md:h-40 object-cover md:object-contain opacity-20 md:opacity-100 absolute -right-0 md:-right-16 top-1/2 transform -translate-y-1/2 md:group-hover:right-0 transition-all duration-300"
+								className="z-0 md:z-20 w-full h-full md:w-40 md:h-40 object-cover md:object-contain opacity-20 md:opacity-100 absolute -right-0 md:-right-16 top-1/2 transform -translate-y-1/2 md:group-hover:right-0 transition-all duration-300"
 								src={nowPlaying.albumImageUrl}
 							/>
 							<div className="flex flex-col gap-2 md:group-hover:opacity-60 z-10">

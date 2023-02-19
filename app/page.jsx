@@ -1,5 +1,6 @@
 import ContactForm from '@/components/ContactForm'
 import SpotifyBlock from '@/components/SpotifyBlock'
+import SteamBlock from '@/components/SteamBlock'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -10,15 +11,16 @@ export default async function Home() {
 				<div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
 					<Image
 						src={'/Avatar.jpeg'}
-						width={120}
-						height={120}
-						className="rounded-xl w-30 object-cover transition-all duration-200"
+						width={100}
+						height={100}
+						className="rounded-xl w-20 md:w-32 object-cover transition-all duration-200"
 						alt="Avatar"
 					/>
 
 					<div className="text-center md:text-left">
 						<h1 className="text-md md:text-2xl">brandon bartram</h1>
 						<p className="text-pink">web & game developer 🐱</p>
+						<p className="text-pink">currently @ xistvr</p>
 					</div>
 				</div>
 			</div>
@@ -27,7 +29,7 @@ export default async function Home() {
 					<Link
 						title="blog"
 						href={'/blog'}
-						className="flex rounded-xl col-span-full items-center justify-center text-white bg-pink font-fira text-xs hover:scale-95 hover:bg-slate-200 hover:text-black transition-all duration-300"
+						className="flex rounded-xl shadow-inner col-span-full items-center justify-center text-white bg-pink font-fira text-xs hover:scale-95 hover:bg-slate-200 hover:text-black transition-all duration-300"
 					>
 						<p className="">my blog</p>
 					</Link>
@@ -38,7 +40,7 @@ export default async function Home() {
 						className="flex group bg-twitter rounded-xl items-center justify-center hover:scale-95 transition-all duration-200"
 					>
 						<svg
-							className="group-hover:rotate-12 transition-all duration-300"
+							className="group-hover:rotate-12 transition-all duration-300 p-1 md:p-0"
 							viewBox="0 0 15 15"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +61,7 @@ export default async function Home() {
 						className="flex group bg-blue-600 rounded-xl items-center justify-center hover:scale-95 transition-all duration-200"
 					>
 						<svg
-							className="group-hover:-rotate-12 transition-all duration-300"
+							className="group-hover:-rotate-12 transition-all duration-300 p-1 md:p-0"
 							viewBox="0 0 15 15"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
@@ -78,53 +80,14 @@ export default async function Home() {
 				</div>
 			</div>
 
-			<div className="flex flex-col justify-center col-span-8 md:col-span-3 gap-4 items-center rounded-xl">
-				<div className="flex flex-row w-full h-full gap-4">
-					<div className="flex flex-col bg-slate-200 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
-						<svg
-							viewBox="0 0 15 15"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							width="15"
-							height="15"
-						>
-							<path
-								d="M7.5 0a3.499 3.499 0 100 6.996A3.499 3.499 0 107.5 0zm-2 8.994a3.5 3.5 0 00-3.5 3.5v2.497h11v-2.497a3.5 3.5 0 00-3.5-3.5h-4z"
-								fill="currentColor"
-							></path>
-						</svg>
-						<div className="flex flex-col items-center text-xs">
-							<p className="text-xs">follows</p>
-							<p className="font-bold text-xs">1</p>
-						</div>
-					</div>
-					<div className="flex flex-col bg-slate-200 justify-center items-center gap-2 h-full w-full rounded-xl p-2">
-						<svg
-							viewBox="0 0 15 15"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							width="15"
-							height="15"
-						>
-							<path
-								fillRule="evenodd"
-								clipRule="evenodd"
-								d="M6.007 13.418l2-12 .986.164-2 12-.986-.164zm-.8-8.918l-3 3 3 3-.707.707L.793 7.5 4.5 3.793l.707.707zm5.293-.707L14.207 7.5 10.5 11.207l-.707-.707 3-3-3-3 .707-.707z"
-								fill="currentColor"
-							></path>
-						</svg>
-						<div className="flex flex-col items-center text-xs">
-							<p className="text-xs">repos</p>
-							<p className="font-bold text-xs">2</p>
-						</div>
-					</div>
-				</div>
+			<div className="flex h-48 md:h-52 col-span-3 bg-zinc-800 rounded-xl transition-all duration-300 overflow-hidden text-white group">
+				<SteamBlock />
 			</div>
 
 			<Link
 				href={'https://github.com/brandonbartram98'}
 				target="_blank"
-				className="relative flex h-38 md:h-52 col-span-4 md:col-span-5 p-3 md:p-6 bg-code text-white rounded-2xl group hover:scale-95 transition-all duration-300"
+				className="relative flex h-38 md:h-52 col-span-5 p-3 md:p-6 bg-code text-white rounded-2xl group hover:scale-95 transition-all duration-300"
 			>
 				<div className="absolute rounded-xl inset-0 bg-black bg-opacity-80 z-0"></div>
 				<div className="flex flex-col justify-between z-10 w-full">
@@ -164,19 +127,33 @@ export default async function Home() {
 				</div>
 			</Link>
 
-			<div className="flex h-48 md:h-52 col-span-4 p-3 md:p-6 bg-slate-800 md:hover:bg-slate-900 rounded-xl relative transition-all duration-300 overflow-hidden text-white group">
+			<div className="flex h-48 md:h-52 col-span-4 bg-slate-800 md:hover:bg-slate-900 rounded-xl relative transition-all duration-300 overflow-hidden text-white group">
 				<SpotifyBlock />
 			</div>
 
-			<div className="flex h-38 md:h-52 justify-center col-span-8 md:col-span-4 items-center p-6 bg-slate-400 rounded-xl">
-				<div className="flex">
-					<h2></h2>
-				</div>
-			</div>
+			<div className="flex h-48 md:h-52 col-span-4 p-3 md:p-6 bg-zinc-600 rounded-xl transition-all duration-300 overflow-hidden text-white group"></div>
 
-			<div className="flex h-38 md:h-52 justify-center col-span-5 items-center p-6 bg-slate-600 rounded-xl">
-				<div className="flex">
-					<h2></h2>
+			<div className="flex h-38 relative md:h-52 justify-center col-span-5 items-center p-6 bg-slate-600 rounded-xl overflow-hidden">
+				<span className="absolute top-0 right-0 px-8 py-1 text-xs tracking-wider text-center whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 font-fira bg-pink">
+					who?
+				</span>
+				<div className="flex flex-col text-white">
+					<p className="w-11/12 pb-2">
+						I am a developer from Norwich UK. Currently at XistVR working on
+						free-roam VR games with Unity.
+					</p>
+					<p className="pb-2">
+						For web I currently enjoy working with{' '}
+						<span className="text-blue-400 font-bold">React</span>,
+						<span className="text-black font-bold"> NextJS</span>,
+						<span className="text-cyan-300 font-bold"> TailwindCSS</span>,
+						<span className="text-pink font-bold"> React-Three-Fiber</span>.
+					</p>
+					<p>
+						In my freetime I am learning{' '}
+						<span className="text-orange-400 font-bold">Blender</span> to create
+						models for game and web use.
+					</p>
 				</div>
 			</div>
 
@@ -195,7 +172,7 @@ export default async function Home() {
 				/>
 			</Link>
 
-			<div className="flex justify-center col-span-8 items-center p-6 px-6 md:px-12 bg-pink rounded-xl">
+			<div className="flex justify-center col-span-8 items-center p-4 md:p-6 md:px-12 bg-pink rounded-xl">
 				<div className="flex flex-col w-full">
 					<ContactForm />
 				</div>
