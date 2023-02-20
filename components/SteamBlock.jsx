@@ -7,8 +7,6 @@ export default function SpotifyBlock() {
 	const [loadingData, setLoadingData] = useState(false)
 	const [steamData, setSteamData] = useState({})
 
-	const [profileUrl, setProfileUrl] = useState('')
-
 	const GetSteamData = async () => {
 		const response = await fetch('/api/steam', {
 			method: 'POST',
@@ -18,8 +16,6 @@ export default function SpotifyBlock() {
 		})
 
 		const steam = await response.json()
-
-		setProfileUrl(steam.getprofileUrl)
 		setSteamData(steam)
 		setLoadingData(true)
 	}
@@ -30,7 +26,7 @@ export default function SpotifyBlock() {
 	return (
 		<Link
 			target={'_blank'}
-			href={profileUrl}
+			href="https://steamcommunity.com/id/BDonBarty"
 			className="flex flex-col justify-end relative w-full h-full p-3 md:p-6 text-white"
 		>
 			<Image
@@ -45,7 +41,7 @@ export default function SpotifyBlock() {
 			) : (
 				<div className="flex flex-col gap-2 text-white">
 					<img
-						className="rounded-xl w-20 h-20 group-hover:translate-y-0 -translate-y-40 transition-all duration-300"
+						className="rounded-xl w-20 h-20 group-hover:translate-y-0 -translate-y-52 transition-all duration-300"
 						src={steamData.getAvatar}
 					/>
 					<div className="flex flex-col gap-2 group-hover:translate-y-0 translate-y-20 transition-all duration-300">

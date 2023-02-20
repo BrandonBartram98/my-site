@@ -7,10 +7,10 @@ import Link from 'next/link'
 export default async function Home() {
 	return (
 		<main className="mx-auto grid max-w-3xl grid-cols-8 gap-4 pt-8 md:pt-12 px-6 text-black">
-			<div className="flex justify-center md:h-52 overflow-hidden items-center p-6 col-span-5 md:col-span-6 text-white border-2 border-pink rounded-xl">
+			<div className="flex justify-center md:h-52 overflow-hidden items-center p-6 col-span-5 md:col-span-6 text-white border-double border-4 bg-slate-900 border-drive rounded-xl">
 				<div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
 					<Image
-						src={'/Avatar.jpeg'}
+						src={'/images/Avatar.jpeg'}
 						width={100}
 						height={100}
 						className="rounded-xl w-20 md:w-32 object-cover transition-all duration-200"
@@ -19,8 +19,8 @@ export default async function Home() {
 
 					<div className="text-center md:text-left">
 						<h1 className="text-md md:text-2xl">brandon bartram</h1>
-						<p className="text-pink">web & game developer 🐱</p>
-						<p className="text-pink">currently @ xistvr</p>
+						<p className="text-drive">web & game developer</p>
+						<p className="">currently @ xistvr</p>
 					</div>
 				</div>
 			</div>
@@ -29,7 +29,7 @@ export default async function Home() {
 					<Link
 						title="blog"
 						href={'/blog'}
-						className="flex rounded-xl shadow-inner col-span-full items-center justify-center text-white bg-pink font-fira text-xs hover:scale-95 hover:bg-slate-200 hover:text-black transition-all duration-300"
+						className="flex rounded-xl shadow-inner col-span-full items-center justify-center text-white bg-drive font-fira text-xs hover:scale-95 hover:bg-slate-200 hover:text-black transition-all duration-300"
 					>
 						<p className="">my blog</p>
 					</Link>
@@ -133,21 +133,22 @@ export default async function Home() {
 
 			<div className="flex h-48 md:h-52 col-span-4 p-3 md:p-6 bg-zinc-600 rounded-xl transition-all duration-300 overflow-hidden text-white group"></div>
 
-			<div className="flex h-38 relative md:h-52 justify-center col-span-5 items-center p-6 bg-slate-600 rounded-xl overflow-hidden">
-				<span className="absolute top-0 right-0 px-8 py-1 text-xs tracking-wider text-center whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 font-fira bg-pink">
+			<div className="flex h-38 relative md:h-52 justify-center col-span-8 md:col-span-5 items-center p-6 bg-slate-600 rounded-xl overflow-hidden">
+				<span className="absolute top-0 right-0 px-8 py-1 text-xs tracking-wider text-center whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 font-fira bg-drive">
 					who?
 				</span>
 				<div className="flex flex-col text-white">
 					<p className="w-11/12 pb-2">
 						I am a developer from Norwich UK. Currently at XistVR working on
-						free-roam VR games with Unity.
+						free-roam VR games with <span className="font-bold">Unity</span>.
 					</p>
 					<p className="pb-2">
 						For web I currently enjoy working with{' '}
 						<span className="text-blue-400 font-bold">React</span>,
 						<span className="text-black font-bold"> NextJS</span>,
 						<span className="text-cyan-300 font-bold"> TailwindCSS</span>,
-						<span className="text-pink font-bold"> React-Three-Fiber</span>.
+						<span className="text-drive font-bold"> ThreeJS (R3F)</span>, and
+						<span className="text-green-400 font-bold"> PostgreSQL</span>
 					</p>
 					<p>
 						In my freetime I am learning{' '}
@@ -165,14 +166,14 @@ export default async function Home() {
 			>
 				<Image
 					className="h-32 w-32 transition-all duration-300"
-					src={'/xist.svg'}
+					src={'/images/xist.svg'}
 					width={50}
 					height={50}
 					alt={''}
 				/>
 			</Link>
 
-			<div className="flex justify-center col-span-8 items-center p-4 md:p-6 md:px-12 bg-pink rounded-xl">
+			<div className="flex justify-center col-span-8 items-center p-4 md:p-6 md:px-12 bg-drive rounded-xl">
 				<div className="flex flex-col w-full">
 					<ContactForm />
 				</div>

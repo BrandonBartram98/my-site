@@ -38,7 +38,7 @@ export default function SpotifyBlock() {
 		<Link
 			target={'_blank'}
 			href={songUrl}
-			className="flex flex-col w-full h-full p-3 md:p-6 justify-between text-spotify"
+			className="flex flex-col w-full h-full p-3 md:p-6 justify-between text-white"
 		>
 			<svg
 				className="md:group-hover:rotate-[25deg] transition-all z-20 duration-300"
