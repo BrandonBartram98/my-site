@@ -1,6 +1,7 @@
 import ContactForm from '@/components/ContactForm'
 import SpotifyBlock from '@/components/SpotifyBlock'
 import SteamBlock from '@/components/SteamBlock'
+import ThreejsBlock from '@/components/ThreejsBlock'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -131,7 +132,9 @@ export default async function Home() {
 				<SpotifyBlock />
 			</div>
 
-			<div className="flex h-48 md:h-52 col-span-4 p-3 md:p-6 bg-zinc-600 rounded-xl transition-all duration-300 overflow-hidden text-white group"></div>
+			<div className="flex h-48 md:h-52 col-span-4 bg-black rounded-xl transition-all duration-300 overflow-hidden text-white group">
+				<ThreejsBlock />
+			</div>
 
 			<div className="flex h-38 relative md:h-52 justify-center col-span-8 md:col-span-5 items-center p-6 bg-slate-600 rounded-xl overflow-hidden">
 				<span className="absolute top-0 right-0 px-8 py-1 text-xs tracking-wider text-center whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 font-fira bg-drive">
@@ -147,8 +150,7 @@ export default async function Home() {
 						<span className="text-blue-400 font-bold">React</span>,
 						<span className="text-black font-bold"> NextJS</span>,
 						<span className="text-cyan-300 font-bold"> TailwindCSS</span>,
-						<span className="text-drive font-bold"> ThreeJS (R3F)</span>, and
-						<span className="text-green-400 font-bold"> PostgreSQL</span>
+						<span className="text-drive font-bold"> ThreeJS (R3F)</span>.
 					</p>
 					<p>
 						In my freetime I am learning{' '}
