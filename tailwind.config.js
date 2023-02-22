@@ -8,7 +8,7 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				darkbg: '#171717',
+				darkbg: '#101110',
 				twitter: '#1DA1F2',
 				github: '#161b22',
 				drive: '#e94299',
@@ -17,6 +17,8 @@ module.exports = {
 			backgroundImage: {
 				code: "url('https://media3.giphy.com/media/1lvotGQwhzi6O0gQtV/giphy.gif?cid=ecf05e47po1y2ahk8xg138gxwnxuhs7rlyevajj91lp86ahk&rid=giphy.gif&ct=g')",
 				griddy: "url('/images/griddy.png')",
+				cross: "url('/images/crosspattern.svg')",
+				polka: "url('/images/polka.svg')",
 			},
 		},
 		fontFamily: {

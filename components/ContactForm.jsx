@@ -2,13 +2,43 @@
 import { useState } from 'react'
 
 export default function ContactForm() {
+	const [email, setEmail] = useState('')
+	const [message, setMessage] = useState('')
 	const [submitted, setSubmitted] = useState(false)
 	const [loading, setLoading] = useState(false)
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		console.log('Sending')
+		setLoading(true)
+		let data = {
+			email,
+			message,
+		}
+
+		fetch('/api/contact', {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json, text/plain, */*',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		}).then((res) => {
+			console.log('Response received')
+			setLoading(false)
+			if (res.status === 200) {
+				console.log('Response succeeded!')
+				setSubmitted(true)
+				setEmail('')
+				setMessage('')
+			}
+		})
+	}
 
 	if (submitted) {
 		return (
 			<div className="text-center">
-				<h2 className="text-2xl font-bold">Thanks!</h2>
+				<h2 className="text-2xl font-bold pb-4">Thanks!</h2>
 				<p className="text-black/80">
 					I&apos;ll get back to you as soon as possible.
 				</p>
@@ -38,17 +68,29 @@ export default function ContactForm() {
 						required
 						placeholder="name@gmail.com"
 						type="email"
+						name="email"
+						onChange={(e) => {
+							setEmail(e.target.value)
+						}}
 					/>
 				</label>
 				<label htmlFor="body">
 					<textarea
 						rows={4}
+						type="text"
 						placeholder="your message"
 						className="w-full rounded-md p-2 resize-y font-fira"
+						name="message"
+						onChange={(e) => {
+							setMessage(e.target.value)
+						}}
 					/>
 				</label>
 				<button
 					type="submit"
+					onClick={(e) => {
+						handleSubmit(e)
+					}}
 					className="flex justify-center px-2 py-2 bg-black rounded-md text-white text-center"
 				>
 					{loading ? (
