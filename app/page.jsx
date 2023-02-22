@@ -8,7 +8,7 @@ import Link from 'next/link'
 export default async function Home() {
 	return (
 		<main className="mx-auto grid max-w-3xl grid-cols-8 gap-4 pt-8 md:pt-12 px-6 text-black">
-			<div className="flex justify-center h-48 overflow-hidden items-center p-6 col-span-5 md:col-span-6 text-white border-double border-4 bg-slate-900 border-drive rounded-xl">
+			<div className="flex justify-center md:h-48 overflow-hidden items-center p-6 col-span-5 md:col-span-6 text-white border-double border-4 bg-slate-900 border-drive rounded-xl">
 				<div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
 					<Image
 						src={'/images/Avatar.jpeg'}
@@ -18,10 +18,16 @@ export default async function Home() {
 						alt="Avatar"
 					/>
 
-					<div className="text-center md:text-left">
-						<h1 className="text-md md:text-2xl">brandon bartram</h1>
-						<p className="text-drive">web & game developer</p>
-						<p className="">currently @ xistvr</p>
+					<div className="text-center md:text-left flex flex-col gap-2">
+						<div className="flex flex-col">
+							<h1 className="text-lg md:text-2xl">brandon bartram</h1>
+							<p className="text-drive">web & game developer</p>
+						</div>
+
+						<div className="flex flex-col">
+							<p className="">💻 currently @ xistvr</p>
+							<p className="">🌍 norwich, uk</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -81,14 +87,14 @@ export default async function Home() {
 				</div>
 			</div>
 
-			<div className="flex h-48 col-span-3 bg-zinc-800 rounded-xl transition-all duration-300 overflow-hidden text-white group">
+			<div className="flex h-44 md:h-48 col-span-3 bg-zinc-800 rounded-xl transition-all duration-300 overflow-hidden text-white group">
 				<SteamBlock />
 			</div>
 
 			<Link
 				href={'https://github.com/brandonbartram98'}
 				target="_blank"
-				className="relative flex h-48 col-span-5 p-3 md:p-6 bg-code text-white rounded-2xl group hover:scale-95 transition-all duration-300"
+				className="relative flex h-44 md:h-48 col-span-5 p-3 md:p-6 bg-code text-white rounded-2xl group hover:scale-95 transition-all duration-300"
 			>
 				<div className="absolute rounded-xl inset-0 bg-black bg-opacity-80 z-0"></div>
 				<div className="flex flex-col justify-between z-10 w-full">
@@ -128,15 +134,15 @@ export default async function Home() {
 				</div>
 			</Link>
 
-			<div className="flex h-48 col-span-4 bg-slate-800 bg-cross md:hover:bg-slate-900 rounded-xl relative transition-all duration-300 overflow-hidden text-white group">
+			<div className="flex h-44 md:h-48 col-span-4 bg-slate-800 bg-cross md:hover:bg-slate-900 rounded-xl relative transition-all duration-300 overflow-hidden text-white group">
 				<SpotifyBlock />
 			</div>
 
-			<div className="flex h-48 col-span-4 bg-black rounded-xl transition-all duration-300 overflow-hidden text-white group">
+			<div className="flex h-44 md:h-48 col-span-4 bg-black rounded-xl transition-all duration-300 overflow-hidden text-white group">
 				<ThreejsBlock />
 			</div>
 
-			<div className="flex h-48 relative justify-center col-span-8 md:col-span-5 items-center p-6 bg-slate-600 rounded-xl overflow-hidden">
+			<div className="flex md:h-48 relative justify-center col-span-8 md:col-span-5 items-center p-6 bg-slate-600 rounded-xl overflow-hidden">
 				<span className="absolute top-0 right-0 px-8 py-1 text-xs tracking-wider text-center whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 font-fira bg-drive">
 					who?
 				</span>
@@ -164,7 +170,7 @@ export default async function Home() {
 				title="xist"
 				target={'_blank'}
 				href={'https://xistvr.com/'}
-				className="flex h-48 justify-center col-span-3 items-center hover:scale-95 transition-all duration-300 p-6 bg-black rounded-xl"
+				className="flex h-44 md:h-48 justify-center col-span-3 items-center hover:scale-95 transition-all duration-300 p-6 bg-black rounded-xl"
 			>
 				<Image
 					className="h-32 w-32 transition-all duration-300"

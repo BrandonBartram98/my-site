@@ -69,7 +69,7 @@ export default function SpotifyBlock() {
 								alt={''}
 							/>
 							<div className="flex flex-col z-20 gap-2 md:group-hover:opacity-60">
-								<div className="text-red-400 font-bold flex gap-2 items-center">
+								<div className="text-red-400 font-bold flex gap-2">
 									<p className="flex">not listening</p>
 									<div className="flex w-2 h-2">
 										<span className="relative inline-flex rounded-full h-2 w-2 bg-red-400"></span>
@@ -88,11 +88,11 @@ export default function SpotifyBlock() {
 								src={nowPlaying.albumImageUrl}
 							/>
 							<div className="flex flex-col gap-2 md:group-hover:opacity-60 z-10">
-								<div className="text-spotify font-bold flex gap-2 items-center">
+								<div className="text-spotify font-bold flex gap-2">
 									<p className="flex">currently listening</p>
 									<div className="flex w-2 h-2">
-										<span className="animate-ping hidden md:inline-flex absolute h-2 w-2 rounded-full bg-spotify"></span>
-										<span className="relative hidden md:inline-flex rounded-full h-2 w-2 bg-spotify"></span>
+										<span className="animate-ping inline-flex absolute h-2 w-2 rounded-full bg-spotify"></span>
+										<span className="relative inline-flex rounded-full h-2 w-2 bg-spotify"></span>
 									</div>
 								</div>
 								<div className="md:w-9/12">
