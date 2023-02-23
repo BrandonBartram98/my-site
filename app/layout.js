@@ -4,13 +4,13 @@ export default function RootLayout({ children }) {
 	const footer = (
 		<footer className="flex flex-col justify-center col-span-8 items-center text-white mt-2 pb-20 pt-4 gap-4">
 			<p className="text-xs">
-				Powered By{' '}
+				powered by{' '}
 				<a href="https://vercel.com" className="underline">
-					Vercel
+					vercel
 				</a>
-				.&nbsp;Built By{' '}
+				.&nbsp;built by{' '}
 				<a href="https://twitter.com/brandon_bartram" className="underline">
-					Me
+					me
 				</a>
 				.
 			</p>

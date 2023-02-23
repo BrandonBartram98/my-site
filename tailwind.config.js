@@ -18,7 +18,8 @@ module.exports = {
 				code: "url('https://media3.giphy.com/media/1lvotGQwhzi6O0gQtV/giphy.gif?cid=ecf05e47po1y2ahk8xg138gxwnxuhs7rlyevajj91lp86ahk&rid=giphy.gif&ct=g')",
 				griddy: "url('/images/griddy.png')",
 				cross: "url('/images/crosspattern.svg')",
-				polka: "url('/images/polka.svg')",
+				stripes: "url('/images/stripes.svg')",
+				formal: "url('/images/formal.svg')",
 			},
 		},
 		fontFamily: {

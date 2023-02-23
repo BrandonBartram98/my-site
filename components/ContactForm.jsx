@@ -50,7 +50,7 @@ export default function ContactForm() {
 		<>
 			<div className="text-left pb-4">
 				<h2 className="font-bold pb-1 text-lg">contact me</h2>
-				<p>fill in the form below, I&apos;ll get back to you asap</p>
+				<p>fill in the form below, I&apos;ll get back to you asap.</p>
 			</div>
 			<form
 				onSubmit={async (event) => {
