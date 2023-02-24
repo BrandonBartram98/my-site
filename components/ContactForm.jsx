@@ -94,7 +94,7 @@ export default function ContactForm() {
 					className="flex justify-center px-2 py-2 bg-black rounded-md text-white text-center"
 				>
 					{loading ? (
-						<span className="loader">
+						<div className="loader">
 							<svg
 								className="h-6 w-6 animate-spin stroke-white"
 								viewBox="0 0 256 256"
@@ -172,7 +172,7 @@ export default function ContactForm() {
 									strokeWidth="24"
 								></line>
 							</svg>
-						</span>
+						</div>
 					) : (
 						<p>send</p>
 					)}

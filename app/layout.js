@@ -1,17 +1,18 @@
 import './globals.css'
+import Link from 'next/link'
 
 export default function RootLayout({ children }) {
 	const footer = (
 		<footer className="flex flex-col justify-center col-span-8 items-center text-white mt-2 pb-20 pt-4 gap-4">
 			<div className="text-xs font-fira">
 				powered by{' '}
-				<a href="https://vercel.com" className="underline">
+				<Link href="https://vercel.com" className="underline">
 					vercel
-				</a>
+				</Link>
 				.&nbsp;built by{' '}
-				<a href="https://twitter.com/brandon_bartram" className="underline">
+				<Link href="https://twitter.com/brandon_bartram" className="underline">
 					me
-				</a>
+				</Link>
 				.
 			</div>
 			<svg
