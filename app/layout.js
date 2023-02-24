@@ -3,7 +3,7 @@ import './globals.css'
 export default function RootLayout({ children }) {
 	const footer = (
 		<footer className="flex flex-col justify-center col-span-8 items-center text-white mt-2 pb-20 pt-4 gap-4">
-			<p className="text-xs">
+			<div className="text-xs font-fira">
 				powered by{' '}
 				<a href="https://vercel.com" className="underline">
 					vercel
@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
 					me
 				</a>
 				.
-			</p>
+			</div>
 			<svg
 				viewBox="0 0 15 15"
 				fill="none"
