@@ -83,9 +83,12 @@ export default function SpotifyBlock() {
 						</div>
 					) : (
 						<div className="flex flex-col gap-2 text-white">
-							<img
+							<Image
 								className="z-0 md:z-20 w-full h-full md:w-40 md:h-40 object-cover md:object-contain opacity-20 md:opacity-100 absolute -right-0 md:-right-16 top-1/2 transform -translate-y-1/2 md:group-hover:right-0 transition-all duration-300"
 								src={nowPlaying.albumImageUrl}
+								width={100}
+								height={100}
+								alt={'albumArt'}
 							/>
 							<div className="flex flex-col gap-2 md:group-hover:opacity-60 z-10">
 								<div className="text-spotify font-bold flex gap-2">

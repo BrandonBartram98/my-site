@@ -4,7 +4,7 @@ const nextConfig = {
 		appDir: true,
 	},
 	images: {
-		domains: ['i.scdn.co'],
+		domains: ['i.scdn.co', 'avatars.akamai.steamstatic.com'],
 	},
 }
 

@@ -40,9 +40,12 @@ export default function SpotifyBlock() {
 				<p>loading..</p>
 			) : (
 				<div className="flex flex-col gap-2 items-center text-white">
-					<img
+					<Image
 						className="rounded-xl w-20 h-20 group-hover:translate-y-0 translate-y-0 md:-translate-y-52 transition-all duration-300"
 						src={steamData.getAvatar}
+						width={80}
+						height={80}
+						alt={'steamAvatar'}
 					/>
 					<div className="flex flex-col text-center gap-2 group-hover:translate-y-0 translate-y-0 md:translate-y-20 transition-all duration-300">
 						<div className="md:w-9/12">
