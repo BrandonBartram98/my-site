@@ -8,14 +8,14 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				darkbg: '#101110',
+				darkbg: '#1b1c1b',
 				twitter: '#1DA1F2',
 				github: '#161b22',
 				drive: '#e94299',
 				spotify: '#18E78D',
 			},
 			backgroundImage: {
-				code: "url('https://media3.giphy.com/media/1lvotGQwhzi6O0gQtV/giphy.gif?cid=ecf05e47po1y2ahk8xg138gxwnxuhs7rlyevajj91lp86ahk&rid=giphy.gif&ct=g')",
+				code: "url('/images/code.gif')",
 				griddy: "url('/images/griddy.png')",
 				cross: "url('/images/crosspattern.svg')",
 				stripes: "url('/images/stripes.svg')",
