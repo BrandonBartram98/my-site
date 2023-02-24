@@ -1,6 +1,8 @@
 # 🧑‍💻 My Personal Site
 My personal site built using NextJS 13's experimental app dir.
 
+TODO: Form check before submit, Guestbook auth component.
+
 ### :hammer: Get Started
 
 - `git clone https://github.com/BrandonBartram98/my-site` - Clone project
