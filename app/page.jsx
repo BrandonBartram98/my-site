@@ -1,6 +1,5 @@
 import ContactForm from '@/components/ContactForm'
 import GitHubBlock from '@/components/GitHubBlock'
-import GuestBookBlock from '@/components/GuestBookBlock'
 import SpotifyBlock from '@/components/SpotifyBlock'
 import SteamBlock from '@/components/SteamBlock'
 import ThreejsBlock from '@/components/ThreejsBlock'
