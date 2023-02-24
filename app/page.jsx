@@ -101,7 +101,7 @@ export default async function Home() {
 				<GitHubBlock />
 			</Link>
 
-			<div className="flex h-44 md:h-48 col-span-4 bg-slate-800 bg-cross md:hover:bg-slate-900 rounded-xl relative transition-all duration-300 overflow-hidden text-white group">
+			<div className="flex h-44 md:h-48 col-span-4 bg-slate-800 md:bg-cross md:hover:bg-slate-900 rounded-xl relative transition-all duration-300 overflow-hidden text-white group">
 				<SpotifyBlock />
 			</div>
 
