@@ -109,19 +109,19 @@ export default async function Home() {
 				<ThreejsBlock />
 			</div>
 
-			<div className="flex md:h-48 relative justify-center col-span-8 md:col-span-5 items-center p-6 bg-slate-700 rounded-xl overflow-hidden">
+			<div className="flex md:h-48 relative justify-center col-span-8 md:col-span-5 items-center p-6 bg-slate-900 rounded-xl overflow-hidden">
 				<span className="absolute top-0 right-0 px-8 py-1 text-xs tracking-wider text-center whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 font-fira bg-drive">
 					who?
 				</span>
 				<div className="flex flex-col text-white">
 					<p className="w-11/12 pb-2">
 						I&apos;m a developer from Norwich. Currently at XistVR working on
-						free-roam VR games with <span className="font-bold">Unity</span>.
+						free-roam VR games with <span className="font-bold">Unity 👾</span>.
 					</p>
 					<p className="pb-2">
 						For web I currently enjoy working with{' '}
 						<span className="text-cyan-300 font-semibold">React</span>,
-						<span className="text-black font-semibold"> NextJS</span>,
+						<span className="text-neutral-100 font-semibold"> NextJS</span>,
 						<span className="text-teal-300 font-semibold"> TailwindCSS</span>,
 						<span className="text-drive font-semibold"> ThreeJS (R3F)</span>.
 					</p>
