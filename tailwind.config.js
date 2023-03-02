@@ -20,6 +20,7 @@ module.exports = {
 				cross: "url('/images/crosspattern.svg')",
 				stripes: "url('/images/stripes.svg')",
 				formal: "url('/images/formal.svg')",
+				steam: "url('/images/steamlogo.svg')",
 			},
 		},
 		fontFamily: {

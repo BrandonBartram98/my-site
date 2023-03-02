@@ -9,25 +9,25 @@ import Link from 'next/link'
 export default async function Home() {
 	return (
 		<main className="mx-auto grid max-w-3xl grid-cols-8 gap-4 pt-8 md:pt-12 px-6 text-black">
-			<div className="flex justify-center md:h-48 overflow-hidden items-center p-6 col-span-5 md:col-span-6 text-white border-double border-4 bg-slate-900 border-drive rounded-xl">
+			<div className="flex justify-center md:h-48 overflow-hidden items-center p-6 col-span-5 md:col-span-6 text-white bg-slate-800 border-drive rounded-xl">
 				<div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
 					<Image
 						src={'/images/Avatar.jpeg'}
 						alt="avatar"
 						width={100}
 						height={100}
-						className="rounded-xl w-20 md:w-32 object-cover transition-all duration-200"
+						className="rounded-full w-20 md:w-32 object-cover transition-all duration-200"
 					/>
 
-					<div className="text-center md:text-left flex flex-col gap-2">
-						<div className="flex flex-col">
+					<div className=" md:text-left flex flex-col gap-2">
+						<div className="flex text-center md:text-left flex-col">
 							<h1 className="text-md md:text-2xl">brandon bartram</h1>
 							<p className="text-drive">web & game developer</p>
 						</div>
 
 						<div className="flex flex-col">
-							<p className="">💻 currently @ xistvr</p>
-							<p className="">🌍 norwich, uk</p>
+							<p className="text-xs">💻 currently @ xistvr</p>
+							<p className="text-xs">🌍 norwich, uk</p>
 						</div>
 					</div>
 				</div>
