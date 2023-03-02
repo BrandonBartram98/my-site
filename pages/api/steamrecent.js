@@ -13,27 +13,34 @@ export default async function handler(req, res) {
 	if (response.status != 200) {
 		return res.status(200).json({
 			steam: {
-				games: '',
+				response: {
+					total_count: 1,
+					games: {
+						appid: 990080,
+						name: 'Hogwarts Legacy',
+						playtime_2weeks: 67,
+						playtime_forever: 466,
+						img_icon_url: 'a9ecb94f249768d0ee5ccecbffe8d8c06d9bed59',
+					},
+				},
 			},
 		})
 	}
 
 	const steam = await response.json()
-	if (steam.item === null) {
+	if (steam.item === null || steam.response.total_count == 0) {
+		const getGameName = 'no recently played'
+		const getPlaytime = '0'
 		return res.status(200).json({
-			steam: {
-				games: '',
-			},
+			getGameName,
+			getPlaytime,
 		})
 	}
-	const getAppID = steam.response.games[0].appid
+
 	const getGameName = steam.response.games[0].name
-	const getIcon = steam.response.games[0].img_icon_url
 	const getPlaytime = steam.response.games[0].playtime_forever
 	return res.status(200).json({
-		getAppID,
 		getGameName,
-		getIcon,
 		getPlaytime,
 	})
 }

@@ -5,20 +5,17 @@ import { useEffect, useState } from 'react'
 
 export default function SpotifyBlock() {
 	const [loadingData, setLoadingData] = useState(false)
+	const [loadingRecent, setLoadedRecentData] = useState(false)
 	const [summaryData, setSummaryData] = useState({})
 	const [recentData, setRecentData] = useState({})
 	const [playtimeData, setPlaytimeData] = useState(0)
-
-	function MinutesToHours(totalMinutes) {
-		const hours = Math.floor(totalMinutes / 60)
-		return hours
-	}
 
 	const GetSteamSummaryData = async () => {
 		const response = await fetch('/api/steamsummary', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': '*',
 			},
 		})
 
@@ -32,13 +29,14 @@ export default function SpotifyBlock() {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': '*',
 			},
 		})
 
 		const data = await response.json()
 		setRecentData(data)
 		setPlaytimeData(Math.floor(parseFloat(data.getPlaytime) / 60))
-		setLoadingData(true)
+		setLoadedRecentData(true)
 	}
 
 	useEffect(() => {
@@ -83,7 +81,7 @@ export default function SpotifyBlock() {
 			</div>
 			<div className="sm:flex hidden flex-col gap-2 text-white">
 				<div className="flex flex-col gap-2 transition-all duration-300">
-					{!loadingData ? (
+					{!loadingRecent ? (
 						<div>
 							<p className="lowercase">loading..</p>
 						</div>
