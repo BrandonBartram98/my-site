@@ -88,14 +88,14 @@ export default async function Home() {
 				</div>
 			</div>
 
-			<div className="flex h-44 md:h-48 col-span-3 bg-zinc-800 rounded-xl transition-all duration-300 overflow-hidden text-white group">
+			<div className="flex h-44 md:h-48 col-span-4 md:col-span-3 bg-zinc-800 rounded-xl transition-all duration-300 overflow-hidden text-white group">
 				<SteamBlock />
 			</div>
 
 			<Link
 				href={'https://github.com/brandonbartram98'}
 				target="_blank"
-				className="relative flex h-44 md:h-48 col-span-5 p-3 md:p-6 bg-code text-white rounded-2xl group md:hover:scale-95 transition-all duration-300"
+				className="relative flex h-44 md:h-48 col-span-4 md:col-span-5 p-3 md:p-6 bg-code text-white rounded-2xl group md:hover:scale-95 transition-all duration-300"
 			>
 				<GitHubBlock />
 			</Link>

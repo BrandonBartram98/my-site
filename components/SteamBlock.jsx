@@ -50,13 +50,13 @@ export default function SpotifyBlock() {
 			className="flex flex-col gap-3 justify-between relative w-full h-full p-3 md:p-6 text-white"
 		>
 			<Image
-				className="w-full h-full p-4 absolute object-contain top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 opacity-30 sm:opacity-5"
+				className="w-full h-full p-4 absolute object-contain top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 opacity-5"
 				src={'/images/steamlogo.svg'}
 				width={50}
 				height={50}
 				alt={''}
 			/>
-			<div className="sm:flex hidden flex-row items-center gap-3 text-white">
+			<div className="flex flex-row items-center gap-3 text-white">
 				{!loadingData ? (
 					<div className="w-10 h-10"></div>
 				) : (
@@ -79,7 +79,7 @@ export default function SpotifyBlock() {
 					)}
 				</div>
 			</div>
-			<div className="sm:flex hidden flex-col gap-2 text-white">
+			<div className="flex flex-col gap-2 text-white">
 				<div className="flex flex-col gap-2 transition-all duration-300">
 					{!loadingRecent ? (
 						<div>
