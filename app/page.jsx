@@ -88,7 +88,7 @@ export default async function Home() {
 				</div>
 			</div>
 
-			<div className="flex h-44 md:h-48 col-span-4 md:col-span-3 bg-zinc-800 rounded-xl transition-all duration-300 overflow-hidden text-white group">
+			<div className="flex h-44 md:h-48 col-span-4 md:col-span-3 bg-zinc-800 rounded-xl transition-all duration-300 hover:scale-95 overflow-hidden text-white group">
 				<SteamBlock />
 			</div>
 
