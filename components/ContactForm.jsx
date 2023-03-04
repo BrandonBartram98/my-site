@@ -55,7 +55,7 @@ export default function ContactForm() {
 			<form
 				onSubmit={async (event) => {
 					event.preventDefault()
-
+					handleSubmit(event)
 					setLoading(true)
 				}}
 				method="POST"
@@ -88,9 +88,6 @@ export default function ContactForm() {
 				</label>
 				<button
 					type="submit"
-					onClick={(e) => {
-						handleSubmit(e)
-					}}
 					className="flex justify-center px-2 py-2 bg-black rounded-md text-white text-center"
 				>
 					{loading ? (
