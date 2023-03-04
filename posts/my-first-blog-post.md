@@ -1,14 +1,13 @@
 ---
-title: "Markdown Placeholder title metadata test"
-subtitle: "Markdown Subtitle"
-date: "2023-02-17"
+title: "My First Blog Post"
+subtitle: "My First Subtitle"
+date: "2023-03-04"
 ---
 
-
-An h1 header
+My First Blog Post (From Markdown Files)
 ============
 
-Paragraphs are separated by a blank line.
+This is my first blog post...
 
 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
 look like:
@@ -26,11 +25,6 @@ content starts at 4-columns in.
 > They can span multiple paragraphs,
 > if you like.
 
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
-
-
 
 An h2 header
 ------------
@@ -40,15 +34,6 @@ Here's a numbered list:
  1. first item
  2. second item
  3. third item
-
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
-
-    # Let me re-iterate ...
-    for i in 1 .. 10 { do-something(i) }
-
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
 
 ~~~
 define foobar() {
@@ -150,13 +135,3 @@ Here's a "line block":
 | Line one
 |   Line too
 | Line tree
-
-and images can be specified like so:
-
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
