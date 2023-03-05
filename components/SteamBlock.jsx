@@ -45,6 +45,7 @@ export default function SpotifyBlock() {
 	}, [])
 	return (
 		<Link
+			title="steam"
 			target={'_blank'}
 			href="https://steamcommunity.com/id/BDonBarty"
 			className="flex flex-col gap-3 justify-between relative w-full h-full p-3 md:p-6 text-white"

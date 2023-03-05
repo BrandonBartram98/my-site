@@ -39,7 +39,9 @@ export default async function Home() {
 						href={'/blog'}
 						className="flex rounded-xl col-span-full items-center justify-center text-white bg-drive font-fira text-xs hover:scale-95 hover:bg-slate-200 hover:text-drive transition-all duration-300"
 					>
-						<p className="font-semibold text-black rounded-lg">my blog</p>
+						<p className="font-semibold text-base text-black rounded-lg">
+							blog
+						</p>
 					</Link>
 					<Link
 						title="twitter"
@@ -93,6 +95,7 @@ export default async function Home() {
 			</div>
 
 			<Link
+				title="github"
 				href={'https://github.com/brandonbartram98'}
 				target="_blank"
 				className="relative flex h-44 md:h-48 col-span-4 md:col-span-5 p-3 md:p-6 bg-code text-white rounded-2xl group md:hover:scale-95 transition-all duration-300"
@@ -126,8 +129,7 @@ export default async function Home() {
 					</p>
 					<p>
 						In my freetime I&apos;m making websites like this one & learning{' '}
-						<span className="text-orange-400 font-bold">Blender</span> to create
-						models for game and web use.
+						<span className="text-orange-400 font-bold">Blender</span>.
 					</p>
 				</div>
 			</div>

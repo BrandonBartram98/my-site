@@ -35,6 +35,7 @@ export default function SpotifyBlock() {
 	}, [])
 	return (
 		<Link
+			title="spotify"
 			target={'_blank'}
 			href={songUrl}
 			className="flex flex-col w-full h-full p-3 md:p-6 justify-between text-white"
