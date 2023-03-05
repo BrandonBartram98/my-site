@@ -1,4 +1,3 @@
-import ChatbotBlock from '@/components/ChatbotBlock'
 import ContactForm from '@/components/ContactForm'
 import GitHubBlock from '@/components/GitHubBlock'
 import SpotifyBlock from '@/components/SpotifyBlock'
@@ -149,10 +148,6 @@ export default async function Home() {
 				<div className="bg-drive bg-formal w-full h-full rounded-xl"></div>
 				<div className="bg-slate-800 bg-formal w-full h-full rounded-xl"></div>
 			</div>
-
-			{/* <div className="flex h-44 md:h-48 justify-center col-span-8 md:col-span-7 items-center transition-all duration-300 p-6 bg-zinc-900 rounded-xl">
-				<ChatbotBlock />
-			</div> */}
 
 			<div className="flex justify-center col-span-8 items-center p-4 md:p-6 md:px-12 bg-drive rounded-xl">
 				<div className="flex flex-col w-full">
