@@ -1,48 +1,56 @@
 'use client'
+import useSWR from 'swr'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+const SummaryData = () => {
+	const { data, error, isLoading } = useSWR('/api/steamsummary', fetcher)
+
+	if (error) {
+		console.log(error)
+		return <p>error..</p>
+	}
+	if (isLoading) return <div></div>
+
+	return (
+		<>
+			<Image
+				className="rounded-md w-8 h-8 transition-all duration-300"
+				src={data.getAvatar}
+				width={80}
+				height={80}
+				alt={'steamAvatar'}
+			/>
+			<div className="flex flex-col gap-2 transition-all duration-300">
+				<div>
+					<p className="font-bold lowercase">{data.getPersonName}</p>
+					<p className="text-xs lowercase">{data.getStatus}</p>
+				</div>
+			</div>
+		</>
+	)
+}
+
+const RecentData = () => {
+	const { data, error, isLoading } = useSWR('/api/steamrecent', fetcher)
+	if (error) return <p>error..</p>
+	if (isLoading) return <p>loading..</p>
+	return (
+		<>
+			<div>
+				<p className="font-bold">last played:</p>
+				<p className="lowercase text-xs">{data.getGameName}</p>
+				<p className="lowercase text-xs">
+					playtime: {Math.floor(parseFloat(data.getPlaytime) / 60)}hrs
+				</p>
+			</div>
+		</>
+	)
+}
 
 export default function SpotifyBlock() {
-	const [loadingData, setLoadingData] = useState(false)
-	const [loadingRecent, setLoadedRecentData] = useState(false)
-	const [summaryData, setSummaryData] = useState({})
-	const [recentData, setRecentData] = useState({})
-	const [playtimeData, setPlaytimeData] = useState(0)
-
-	const GetSteamSummaryData = async () => {
-		const response = await fetch('/api/steamsummary', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': '*',
-			},
-		})
-
-		const steam = await response.json()
-		setSummaryData(steam)
-		setLoadingData(true)
-	}
-
-	const GetSteamRecentData = async () => {
-		const response = await fetch('/api/steamrecent', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': '*',
-			},
-		})
-
-		const data = await response.json()
-		setRecentData(data)
-		setPlaytimeData(Math.floor(parseFloat(data.getPlaytime) / 60))
-		setLoadedRecentData(true)
-	}
-
-	useEffect(() => {
-		GetSteamSummaryData()
-		GetSteamRecentData()
-	}, [])
 	return (
 		<Link
 			title="steam"
@@ -58,37 +66,11 @@ export default function SpotifyBlock() {
 				alt={''}
 			/>
 			<div className="flex flex-row items-center gap-3 text-white">
-				{summaryData.getAvatar && (
-					<Image
-						className="rounded-md w-8 h-8 transition-all duration-300"
-						src={summaryData.getAvatar}
-						width={80}
-						height={80}
-						alt={'steamAvatar'}
-					/>
-				)}
-				<div className="flex flex-col gap-2 transition-all duration-300">
-					{loadingData && (
-						<div>
-							<p className="font-bold lowercase">{summaryData.getPersonName}</p>
-							<p className="text-xs lowercase">{summaryData.getStatus}</p>
-						</div>
-					)}
-				</div>
+				<SummaryData />
 			</div>
 			<div className="flex flex-col gap-2 text-white">
 				<div className="flex flex-col gap-2 transition-all duration-300">
-					{!loadingRecent ? (
-						<div>
-							<p className="lowercase">loading..</p>
-						</div>
-					) : (
-						<div>
-							<p className="font-bold">last played:</p>
-							<p className="lowercase text-xs">{recentData.getGameName}</p>
-							<p className="lowercase text-xs">playtime: {playtimeData}hrs</p>
-						</div>
-					)}
+					<RecentData />
 				</div>
 			</div>
 		</Link>

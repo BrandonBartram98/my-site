@@ -6,8 +6,6 @@ export const getRecentlyPlayed = () => {
 }
 
 export default async function handler(req, res) {
-	console.log('Getting Steam Recent Data...')
-
 	const response = await getRecentlyPlayed()
 
 	if (response.status != 200) {

@@ -3,7 +3,6 @@ const client_secret = process.env.SPOTIFY_SECRET
 const refresh_token = process.env.SPOTIFY_REFRESH
 
 const getAccessToken = async () => {
-	console.log('Getting Spotify Access Token...')
 	const refresh_token = process.env.SPOTIFY_REFRESH
 	const response = await fetch('https://accounts.spotify.com/api/token', {
 		method: 'POST',

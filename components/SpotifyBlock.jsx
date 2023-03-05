@@ -1,43 +1,22 @@
 'use client'
+import useSWR from 'swr'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 export default function SpotifyBlock() {
-	const [loadingData, setLoadingData] = useState(false)
-	const [isListening, setIsListening] = useState(false)
-	const [nowPlaying, setNowPlaying] = useState({})
-	const [songUrl, setSongUrl] = useState('')
+	const { data, error, isLoading } = useSWR('/api/spotify', fetcher, {
+		refreshInterval: 1000,
+	})
 
-	const GetSpotifyData = async () => {
-		const response = await fetch('/api/spotify', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		})
-
-		const playing = await response.json()
-		setNowPlaying(playing)
-		if (!playing.isPlaying) {
-			setSongUrl(
-				'https://open.spotify.com/playlist/4FKL1mD79QAm4h3GWktFcy?si=5d48ab58bb554ecb'
-			)
-		} else {
-			setSongUrl(playing.songUrl)
-		}
-		setIsListening(playing.isPlaying)
-		setLoadingData(true)
-	}
-
-	useEffect(() => {
-		GetSpotifyData()
-	}, [])
 	return (
 		<Link
 			title="spotify"
 			target={'_blank'}
-			href={songUrl}
+			href={
+				'https://open.spotify.com/playlist/4FKL1mD79QAm4h3GWktFcy?si=5d48ab58bb554ecb'
+			}
 			className="flex flex-col w-full h-full p-3 md:p-6 justify-between text-white"
 		>
 			<svg
@@ -55,11 +34,11 @@ export default function SpotifyBlock() {
 					fill="currentColor"
 				></path>
 			</svg>
-			{!loadingData ? (
+			{isLoading ? (
 				<p>loading..</p>
 			) : (
 				<>
-					{!isListening ? (
+					{!data.isPlaying ? (
 						<div className="flex flex-col gap-2 text-white transition-all duration-300">
 							<Image
 								className="z-0 md:z-20 w-full h-full md:w-40 md:h-40 object-cover opacity-20 md:opacity-100 absolute -right-0 md:-right-16 top-1/2 transform -translate-y-1/2 md:group-hover:right-0 transition-all duration-300"
@@ -85,7 +64,7 @@ export default function SpotifyBlock() {
 						<div className="flex flex-col gap-2 text-white">
 							<Image
 								className="z-0 md:z-20 w-full h-full md:w-40 md:h-40 object-cover md:object-contain opacity-20 md:opacity-100 absolute -right-0 md:-right-16 top-1/2 transform -translate-y-1/2 md:group-hover:right-0 transition-all duration-300"
-								src={nowPlaying.albumImageUrl}
+								src={data.albumImageUrl}
 								width={100}
 								height={100}
 								alt={'albumArt'}
@@ -99,10 +78,8 @@ export default function SpotifyBlock() {
 									</div>
 								</div>
 								<div className="md:w-9/12">
-									<p className="font-bold lowercase truncate ">
-										{nowPlaying.title}
-									</p>
-									<p className="lowercase">{nowPlaying.artist}</p>
+									<p className="font-bold lowercase truncate ">{data.title}</p>
+									<p className="lowercase">{data.artist}</p>
 								</div>
 							</div>
 						</div>

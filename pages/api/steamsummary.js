@@ -6,8 +6,6 @@ export const getPlayerSummaries = () => {
 }
 
 export default async function handler(req, res) {
-	console.log('Getting Steam Summary Data...')
-
 	const response = await getPlayerSummaries()
 
 	if (response.status != 200) {
