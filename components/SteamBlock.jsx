@@ -57,9 +57,7 @@ export default function SpotifyBlock() {
 				alt={''}
 			/>
 			<div className="flex flex-row items-center gap-3 text-white">
-				{!loadingData ? (
-					<div className="w-10 h-10"></div>
-				) : (
+				{summaryData.getAvatar && (
 					<Image
 						className="rounded-md w-8 h-8 transition-all duration-300"
 						src={summaryData.getAvatar}
@@ -69,9 +67,7 @@ export default function SpotifyBlock() {
 					/>
 				)}
 				<div className="flex flex-col gap-2 transition-all duration-300">
-					{!loadingData ? (
-						<div></div>
-					) : (
+					{loadingData && (
 						<div>
 							<p className="font-bold lowercase">{summaryData.getPersonName}</p>
 							<p className="text-xs lowercase">{summaryData.getStatus}</p>

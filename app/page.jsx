@@ -88,7 +88,7 @@ export default async function Home() {
 				</div>
 			</div>
 
-			<div className="flex h-44 md:h-48 col-span-4 md:col-span-3 bg-zinc-800 rounded-xl transition-all duration-300 hover:scale-95 overflow-hidden text-white group">
+			<div className="flex h-44 md:h-48 col-span-4 md:col-span-3 bg-zinc-800 hover:scale-95 rounded-xl transition-all duration-300 overflow-hidden text-white group">
 				<SteamBlock />
 			</div>
 
@@ -151,12 +151,6 @@ export default async function Home() {
 				<div className="bg-drive bg-formal w-full h-full rounded-xl"></div>
 				<div className="bg-slate-800 bg-formal w-full h-full rounded-xl"></div>
 			</div>
-
-			{/* <div className="flex h-44 md:h-48 col-span-2 bg-slate-700 rounded-xl transition-all duration-300 overflow-hidden text-white group"></div> */}
-
-			{/* <div className="flex h-44 md:h-48 p-3 md:p-6 md:col-span-6 col-span-8 bg-zinc-700 rounded-xl transition-all duration-300 overflow-hidden text-white group">
-				<GuestBookBlock />
-			</div> */}
 
 			<div className="flex justify-center col-span-8 items-center p-4 md:p-6 md:px-12 bg-drive rounded-xl">
 				<div className="flex flex-col w-full">

@@ -7,7 +7,6 @@ export default function SpotifyBlock() {
 	const [loadingData, setLoadingData] = useState(false)
 	const [isListening, setIsListening] = useState(false)
 	const [nowPlaying, setNowPlaying] = useState({})
-
 	const [songUrl, setSongUrl] = useState('')
 
 	const GetSpotifyData = async () => {
