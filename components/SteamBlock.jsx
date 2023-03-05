@@ -1,16 +1,18 @@
 'use client'
-import useSWR from 'swr'
+import useSWR, { preload } from 'swr'
 import Image from 'next/image'
 import Link from 'next/link'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
+preload('/api/steamrecent', fetcher)
+preload('/api/steamsteamsummary', fetcher)
 
 const SummaryData = () => {
 	const { data, error, isLoading } = useSWR('/api/steamsummary', fetcher)
 
 	if (error) {
 		console.log(error)
-		return <p>error..</p>
+		return <p></p>
 	}
 	if (isLoading) return <div></div>
 
@@ -53,7 +55,6 @@ const RecentData = () => {
 export default function SpotifyBlock() {
 	return (
 		<Link
-			title="steam"
 			target={'_blank'}
 			href="https://steamcommunity.com/id/BDonBarty"
 			className="flex flex-col gap-3 justify-between relative w-full h-full p-3 md:p-6 text-white"

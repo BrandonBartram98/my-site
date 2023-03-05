@@ -1,3 +1,4 @@
+import ChatbotBlock from '@/components/ChatbotBlock'
 import ContactForm from '@/components/ContactForm'
 import GitHubBlock from '@/components/GitHubBlock'
 import SpotifyBlock from '@/components/SpotifyBlock'
@@ -35,7 +36,6 @@ export default async function Home() {
 			<div className="flex h-full justify-center col-span-3 md:col-span-2 items-center rounded-xl">
 				<div className="grid grid-cols-2 grid-rows-3 sm:grid-rows-2 h-full w-full gap-4">
 					<Link
-						title="blog"
 						href={'/blog'}
 						className="flex rounded-xl col-span-full items-center justify-center text-white bg-drive font-fira text-xs hover:scale-95 hover:bg-slate-200 hover:text-drive transition-all duration-300"
 					>
@@ -44,7 +44,6 @@ export default async function Home() {
 						</p>
 					</Link>
 					<Link
-						title="twitter"
 						href={'https://twitter.com/brandon_bartram'}
 						target="_blank"
 						className="flex group col-span-full sm:col-span-1 bg-twitter rounded-xl items-center justify-center hover:scale-95 transition-all duration-300"
@@ -65,7 +64,6 @@ export default async function Home() {
 						</svg>
 					</Link>
 					<Link
-						title="linkedin"
 						href={'https://www.linkedin.com/in/brandonbartram/'}
 						target="_blank"
 						className="flex group bg-blue-600 col-span-full sm:col-span-1 rounded-xl items-center justify-center hover:scale-95 transition-all duration-300"
@@ -95,7 +93,6 @@ export default async function Home() {
 			</div>
 
 			<Link
-				title="github"
 				href={'https://github.com/brandonbartram98'}
 				target="_blank"
 				className="relative flex h-44 md:h-48 col-span-4 md:col-span-5 p-3 md:p-6 bg-code text-white rounded-2xl group md:hover:scale-95 transition-all duration-300"
@@ -135,7 +132,6 @@ export default async function Home() {
 			</div>
 
 			<Link
-				title="xist"
 				target={'_blank'}
 				href={'https://xistvr.com/'}
 				className="flex h-44 md:h-48 justify-center col-span-3 items-center hover:scale-95 transition-all duration-300 p-6 bg-black rounded-xl"
@@ -149,10 +145,14 @@ export default async function Home() {
 				/>
 			</Link>
 
-			<div className="flex flex-col md:hidden gap-4 h-44 md:h-48 col-span-5 rounded-xl transition-all duration-300 overflow-hidden text-white group">
+			<div className="flex flex-col md:hidden gap-4 h-44 md:h-48 col-span-5 md:col-span-1 rounded-xl transition-all duration-300 overflow-hidden text-white group">
 				<div className="bg-drive bg-formal w-full h-full rounded-xl"></div>
 				<div className="bg-slate-800 bg-formal w-full h-full rounded-xl"></div>
 			</div>
+
+			{/* <div className="flex h-44 md:h-48 justify-center col-span-8 md:col-span-7 items-center transition-all duration-300 p-6 bg-zinc-900 rounded-xl">
+				<ChatbotBlock />
+			</div> */}
 
 			<div className="flex justify-center col-span-8 items-center p-4 md:p-6 md:px-12 bg-drive rounded-xl">
 				<div className="flex flex-col w-full">

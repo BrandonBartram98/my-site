@@ -64,7 +64,7 @@ export default function ContactForm() {
 			>
 				<label htmlFor="email">
 					<input
-						className="w-full rounded-md p-2 font-fira"
+						className="w-full text-sm rounded-md p-2 font-fira"
 						required
 						placeholder="name@gmail.com"
 						type="email"
@@ -79,7 +79,7 @@ export default function ContactForm() {
 						rows={4}
 						type="text"
 						placeholder="your message"
-						className="w-full rounded-md p-2 resize-y font-fira"
+						className="w-full rounded-md p-2 text-sm resize-y font-fira"
 						name="message"
 						onChange={(e) => {
 							setMessage(e.target.value)
@@ -88,7 +88,7 @@ export default function ContactForm() {
 				</label>
 				<button
 					type="submit"
-					className="flex justify-center px-2 py-2 bg-black rounded-md text-white text-center"
+					className="flex justify-center p-2 bg-black hover:bg-gray-900 transition-all duration-300 rounded-md text-white text-center"
 				>
 					{loading ? (
 						<div className="loader">

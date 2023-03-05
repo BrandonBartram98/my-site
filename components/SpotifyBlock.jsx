@@ -1,9 +1,10 @@
 'use client'
-import useSWR from 'swr'
+import useSWR, { preload } from 'swr'
 import Image from 'next/image'
 import Link from 'next/link'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
+preload('/api/spotify', fetcher)
 
 export default function SpotifyBlock() {
 	const { data, error, isLoading } = useSWR('/api/spotify', fetcher, {
@@ -12,10 +13,11 @@ export default function SpotifyBlock() {
 
 	return (
 		<Link
-			title="spotify"
 			target={'_blank'}
 			href={
-				'https://open.spotify.com/playlist/4FKL1mD79QAm4h3GWktFcy?si=5d48ab58bb554ecb'
+				data && data.isPlaying
+					? data.songUrl
+					: 'https://open.spotify.com/playlist/4FKL1mD79QAm4h3GWktFcy?si=5d48ab58bb554ecb'
 			}
 			className="flex flex-col w-full h-full p-3 md:p-6 justify-between text-white"
 		>
