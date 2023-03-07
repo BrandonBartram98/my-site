@@ -12,4 +12,4 @@ My personal site built using NextJS 13's experimental app dir.
 - [`next`](https://nextjs.org/) &ndash; SSR React framework
 - [`tailwind`](https://tailwindcss.com/) &ndash; A utility-first CSS framework
 - [`spotify api`](https://developer.spotify.com/documentation/web-api/) &ndash; Spotify API for currently listening and playlist
-- [`steam api`](https://partner.steamgames.com/doc/webapi_overview) &ndash; Steam API for profile and online status
+- [`steam api`](https://partner.steamgames.com/doc/webapi_overview) &ndash; Steam API for profile, online status and last played game
