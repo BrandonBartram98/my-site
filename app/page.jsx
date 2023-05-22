@@ -26,7 +26,7 @@ export default async function Home() {
 						</div>
 
 						<div className="flex flex-col">
-							<p className="text-xs">💻 currently @ xistvr</p>
+							<p className="text-xs">💻 currently @ weareimmersive</p>
 							<p className="text-xs">🌍 norwich, uk</p>
 						</div>
 					</div>
@@ -113,8 +113,8 @@ export default async function Home() {
 				</span>
 				<div className="flex flex-col text-white">
 					<p className="w-11/12 pb-2">
-						I&apos;m a developer from Norwich. Currently at XistVR working on
-						free-roam VR games with <span className="font-bold">Unity 👾</span>.
+						I&apos;m a developer from Norwich. Currently at We Are Immersive
+						working on free-roam VR games and immersive technology.
 					</p>
 					<p className="pb-2">
 						For web I currently enjoy working with{' '}
