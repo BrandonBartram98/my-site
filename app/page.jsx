@@ -22,7 +22,7 @@ export default async function Home() {
 					<div className=" md:text-left flex flex-col gap-2">
 						<div className="flex text-center md:text-left flex-col">
 							<h1 className="text-md md:text-2xl">brandon bartram</h1>
-							<p className="text-drive">web & game developer</p>
+							<p className="text-drive">developer</p>
 						</div>
 
 						<div className="flex flex-col">
