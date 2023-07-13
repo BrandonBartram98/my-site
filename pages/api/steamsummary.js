@@ -1,5 +1,5 @@
 export const getPlayerSummaries = () => {
-	const playersummaries_endpoint = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.STEAM_TOKEN}&steamids=${process.env.STEAM_ID}`
+	const playersummaries_endpoint = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${process.env.STEAM_TOKEN}&steamids=${process.env.STEAM_ID}`
 	return fetch(playersummaries_endpoint, {
 		method: 'GET',
 	})

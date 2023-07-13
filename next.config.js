@@ -7,6 +7,7 @@ const nextConfig = {
 		domains: [
 			'i.scdn.co',
 			'avatars.akamai.steamstatic.com',
+			'avatars.steamstatic.com',
 			'media.steampowered.com',
 		],
 	},
