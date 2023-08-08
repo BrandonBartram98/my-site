@@ -16,7 +16,7 @@
     "eslint-config-next": "13.1.6",
     "gray-matter": "^4.0.3",
     "markdown-to-jsx": "^7.1.9",
-    "next": "^13.4.9",
+    "next": "13.1.6",
     "nodemailer": "^6.9.1",
     "openai": "^3.2.1",
     "querystring": "^0.2.1",
